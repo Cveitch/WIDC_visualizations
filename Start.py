@@ -1,9 +1,5 @@
 # Author: Daniel O'Reilly
 
-import time
-from SensorDriverPackage import sensorBase
-import DataLogging.sensorLogging
-
 '''
 The script should run as follows:
     -initial sleep for sensor warmup (no sensors require more than 5 seconds
@@ -17,15 +13,19 @@ The script should run as follows:
             will simply not appear. This is done was ease of the user, as well as easier querying
             -Humidity 1 -> 2. This follows the same protocal as above
             -Pressure 1. This follows the sampe protocal as above
-            
+
         -Creating the system this way allows for easy implementation of future sensors.
-        
+
     -It is the goal to create the system as plug and play as possible. At this point in the code,
     once all sensors have been decided and drivers written, the only area in the code a user would touch
     is to create a desired iD for the Pi. This is currently registered as an INT.
-           
+
 
 '''
+
+import time
+from SensorDriverPackage import sensorBase
+import DataLogging.sensorLogging
 
 time.sleep(5)
 
