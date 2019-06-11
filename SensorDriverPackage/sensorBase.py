@@ -5,11 +5,11 @@ import SensorDriverPackage.BME280
 import SensorDriverPackage.MCP9808
 
 
-class SensorBase:
+class SensorBase(object):
 
     def __init__(self):
 
-        possibleTemperatureList = ['0x18', '0x19','0x1A', '0x1B', '0x1C', '0x1D', '0x1E', '0x1F']
+        possibleTemperatureList = ['0x18', '0x19', '0x1A', '0x1B', '0x1C', '0x1D', '0x1E', '0x1F']
         possibleHumidityList = ['0x44', '0x45']
         possiblePressureList = ['0x78']
 
@@ -42,7 +42,7 @@ class SensorBase:
                 else:
                     print("Sensor Not Compatible with Current System")
 
-                amountOfDevices+=1
+                amountOfDevices += 1
 
 
             except IOError as e:
@@ -51,7 +51,6 @@ class SensorBase:
 
             except Exception as e:
                 print("Error: {0} on address {1}".format(e, hex(device)))
-
 
         for x in self.temperatureSensorsUsed:
             self.x = self.assignTemp(x)
@@ -77,35 +76,11 @@ class SensorBase:
         for x in self.pressureSensorsUsed:
             pressureData.append(self.x.readHumidity())
 
+            tempData = [1,2,3]
+            humidData = [4,5,6]
+            pressureData = [7,8,9]
+
         return tempData, humidData, pressureData
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     def assignTemp(self, address):
 
@@ -121,20 +96,3 @@ class SensorBase:
 
         baroSensor = SensorDriverPackage.BME280.BME280(address)
         return baroSensor
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

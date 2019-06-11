@@ -19,7 +19,7 @@ connect("WIDC")
 
 # Basic Creation of Desired Values
 class sensorData(Document):
-    piID = IntField(required=True)
+    piID = IntField(required=False)
     dateSent = DateTimeField(default=datetime.utcnow)
     temperature1 = IntField(required=False, min_value=0, max_value=999)
     temperature2 = IntField(required=False, min_value=0, max_value=999)

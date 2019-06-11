@@ -1,30 +1,77 @@
 from Database.MongoDB import sensorData
 
 
-user = sensorData(
-    piID = 1,
-    temperature1 = 20,
-    temperature2 = 40,
-    temperature3 = 50,
-    temperature4 = 60,
-    temperature5 = 70,
-    temperature6 = 80
-).save()
+data = [1,2,3,4,5,6]
+
+print ("start")
+user = sensorData()
+try:
+
+    user.temperature1 = data[0]
+    user.save()
+except IndexError:
+
+    user.temperature1 = 'null'
+
+try:
+
+    user.temperature2 = data[1]
+    user.save()
+
+except IndexError:
+
+    user.temperature2 = 'null'
+
+try:
+    user.temperature3 = data[2]
+    user.save()
+
+except:
+
+    user.tempreature3 = 'nulll'
+
+try:
+    user.temperature4 = data[3]
+    user.save()
+
+except:
+
+    user.temperature4 = 'null'
+
+try:
+
+    user.temperature5 = data[4]
+    user.save()
+
+except:
+
+    user.temperature5 = 'null'
+
+try:
+    user.temperature6 = data[5]
+    user.save()
+
+except:
+
+    user.temperature6 = 'null'
 
 
-user2 = sensorData(
-    piID=2,
-    temperature1=20,
-    temperature2=40,
-    temperature3=50,
-    temperature4=60,
-    temperature5=70,
-    temperature6=80,
-    temperature7 = 80,
-    temperature8 = 90,
-    pressure =10
+try:
+    user.temperature7 = data[6]
+    user.save()
 
-).save()
+except:
+
+    user.temperature7 = 'null'
+
+try:
+    user.temperature8 = data[7]
+    user.save()
+
+except:
+
+    user.temperature8 = 'null'
+
 
 '''
 
