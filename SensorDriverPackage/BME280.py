@@ -4,8 +4,7 @@ import bme280
 
 class BME280:
 
-    def __init__(self,address):
-
+    def __init__(self, address):
         port = 1
         address = address
         bus = smbus2.SMBus(port)
@@ -13,7 +12,7 @@ class BME280:
         self.data = bme280.sample(bus, address, calibrate)
 
     def readTemperature(self):
-       return self.data.temperature
+        return self.data.temperature
 
     def readHumidity(self):
         return self.data.humidity

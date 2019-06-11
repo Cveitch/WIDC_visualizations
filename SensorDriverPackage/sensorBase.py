@@ -1,3 +1,5 @@
+# Author: Daniel O'Reilly
+
 import smbus2
 import errno
 import SensorDriverPackage.SHT31D
@@ -76,9 +78,9 @@ class SensorBase(object):
         for x in self.pressureSensorsUsed:
             pressureData.append(self.x.readHumidity())
 
-            tempData = [1,2,3]
-            humidData = [4,5,6]
-            pressureData = [7,8,9]
+            tempData = [1, 2, 3]
+            humidData = [4, 5, 6]
+            pressureData = [7, 8, 9]
 
         return tempData, humidData, pressureData
 

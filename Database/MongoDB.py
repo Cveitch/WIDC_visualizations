@@ -1,3 +1,5 @@
+# Author: Daniel O'Reilly
+
 from mongoengine import *
 from datetime import datetime
 import json
@@ -32,6 +34,7 @@ class sensorData(Document):
     humidity1 = IntField(required=False, min_value=0, max_value=999)
     humidity2 = IntField(required=False, min_value=0, max_value=999)
     pressure = IntField(required=False, min_value=0, max_value=999)
+
     # carbonRead = IntField(required = False)
     # particulate = IntField(required = False)
 
@@ -64,6 +67,3 @@ class sensorData(Document):
         "ordering": ["-dateSent"]
 
     }
-
-
-
