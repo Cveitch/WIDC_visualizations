@@ -1,7 +1,9 @@
 from Database.MongoDB import sensorData
 
+#Can take any amount of data without having to add 999 or an arbitrary value to the database
+#this allows for easier querying and overall ease of use
 
-data = [1,2,3,4,5,6]
+data = []
 
 print ("start")
 user = sensorData()
