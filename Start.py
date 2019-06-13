@@ -37,3 +37,4 @@ while (1):
     DataLogging.sensorLogging(3, data)
 
     time.sleep(3600)
+    #enter time desired to read ever so often
